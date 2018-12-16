@@ -1,3 +1,32 @@
+.main-container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.col {
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.col-1 {
+    background: red;
+}
+
+.col-2 {
+    background: blue;
+}
+
+.col-3 {
+    background: green;
+}
+
 .App {
   text-align: center;
 }

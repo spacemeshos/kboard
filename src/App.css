@@ -13,6 +13,11 @@
     margin: 0;
     padding: 0;
     flex-grow: 1;
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 33.333333vw;
 }
 
 .col-1 {
@@ -25,6 +30,28 @@
 
 .col-3 {
     background: green;
+}
+
+.col-header {
+    text-align: center;
+}
+
+.col-content {
+    flex-grow: 2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.col-label {
+    margin-top  f: 20px;
+    color: white;
+    font-size: 40px;
 }
 
 .App {

@@ -1,0 +1,66 @@
+.card {
+    background: #FFFFA5;
+    display: flex;
+    margin: 12px;
+    width: 160px;
+    height: 160px;
+    padding: 12px;
+    flex-grow: 0;
+    align-items: stretch;
+    flex-direction: column;
+    align-content: stretch;
+    border-radius: 3px;
+}
+
+.title-row {
+    flex-grow: 2;
+    text-align: left;
+}
+
+.labels-row {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    flex-grow: 0;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.label {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: lightgreen;
+    margin-right:2px;
+    font-size:14px;
+    border-radius: 2px;
+}
+
+.title-label {
+    font-size: 18px;
+}
+
+.assignee-row {
+    margin-top: 6px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch;
+    justify-content: flex-end;
+}
+
+.profile-image {
+    width: 24px;
+    height: 24px;
+    background: blue;
+    flex-grow: 0;
+    border-radius: 24px;
+}
+
+.assignee-name {
+    font-size: 16px;
+    height: 24px;
+    flex-grow: 0;
+    padding-right: 10px;
+}

@@ -1,7 +1,10 @@
 # Overview
 A Github project kanban board full screen dashbaord visualization designed for big screen display.
 
+![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample1.png)
 
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 

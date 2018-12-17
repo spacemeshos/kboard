@@ -1,9 +1,25 @@
 # Overview
-A Github project kanban board full screen dashbaord visualization designed for big screen display.
+Github released a nice Kanban board feature for tracking project status across multiple repos.
+This Javascript app renders such a board for non-interactive real-time display on large screens.
 
 ![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample1.png)
 
+## Running a dev build
+1. Rename src/config_template.js to src/config.js and input a personal github access token with read perms to your org and repo
 
+2. Disable cors origin checks in your browser for localhost
+
+3. `yarn start`
+
+## Building
+1. `yarn build`
+
+## Running a production build
+- Configure your server cors settings to allow client jscript code to call the github rest apis
+- You can use express, yarn server, etc...
+
+## Security Warning
+If you plan deploying a kboard over the Internet (and not an Intranet) then you need make sure the github api personal access token is properly configure with read access for your repos or anyone will be able to write to your github org and repos using it.
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
@@ -307,7 +323,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -2010,7 +2026,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 

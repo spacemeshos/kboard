@@ -1,13 +1,15 @@
 # Overview
 Github released a nice Kanban board feature for tracking project status across multiple repos.
-This Javascript app renders such a board for non-interactive real-time display on large screens.
+This Javascript app renders a Kanba board for non-interactive,real-time, full-screen display on large screens.  
 
 ![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample1.png)
 
 ## Running a dev build
-1. Rename src/config_template.js to src/config.js and input a personal github access token with read perms to your org and repo
+1. Rename `src/config_template.js` to `src/config.js` and input a personal github access token with read perms to your org and repos.
 
-2. Disable cors origin checks in your browser for localhost
+2. Setup your board by modifying `src/config.js`
+
+3. Disable cors origin checks in your browser for localhost
 
 3. `yarn start`
 
@@ -19,7 +21,7 @@ This Javascript app renders such a board for non-interactive real-time display o
 - You can use express, yarn server, etc...
 
 ## Security Warning
-If you plan deploying a kboard over the Internet (and not an Intranet) then you need make sure the github api personal access token is properly configure with read access for your repos or anyone will be able to write to your github org and repos using it.
+If you plan deploying a kboard over the Internet (and not an Intranet) then you need make sure the github api personal access token is properly configure with read access for your repos or anyone will be able to write to your github org and repos using it. Your access key needs the following permissions: `read:org, repo`
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

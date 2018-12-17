@@ -43,19 +43,19 @@ public render() {
 
     return (
         <div className="main-container">
-          <div className="col col-1">
+          <div className="col" style={{background: this.state.data.columns[0].color}}>
             <div className="col-header">
                 <p className="col-label">TODO</p>
             </div>
             { this.renderCards(this.state.data.columns[0]) }
           </div>
-          <div className="col col-2">
+          <div className="col" style={{background: this.state.data.columns[1].color}}>
                 <div className="col-header">
                     <p className="col-label">DOING</p>
               </div>
               { this.renderCards(this.state.data.columns[1]) }
           </div>
-          <div className="col col-3">
+          <div className="col" style={{background: this.state.data.columns[2].color}}>
                 <div className="col-header">
                     <p className="col-label">DONE</p>
                 </div>

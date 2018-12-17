@@ -19,16 +19,9 @@ constructor(props: any){
 }
 
 public async componentDidMount() {
-      // import { IData } from './types';
-      const client = new Client();
-      try {
-        const data: IData = await client.LoadAllData();
-        console.log(data);
-        this.setState({data, error: ""});
-    } catch (err) { // failed to log data
-        console.log('Error loading data: ' + err);
-        this.setState({data: undefined, error: "" + err});
-    }
+    const periodMsecs = config.updatesIntervalHours * 60 * 60 * 1000;
+    setInterval(this.getBoardData, periodMsecs);
+    this.getBoardData();
 }
 
 public render() {
@@ -63,6 +56,18 @@ public render() {
           </div>
         </div>
     );
+  }
+
+  private async getBoardData() {
+      const client = new Client();
+      try {
+        const data: IData = await client.LoadAllData();
+        console.log(data);
+        this.setState({data, error: ""});
+    } catch (err) { // failed to log data
+        console.log('Error loading data: ' + err);
+        this.setState({data: undefined, error: "" + err});
+    }
   }
 
   private renderCards(column: IColumn): React.ReactNode {

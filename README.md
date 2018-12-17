@@ -1,3 +1,8 @@
+# Overview
+A Github project kanban board full screen dashbaord visualization designed for big screen display.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

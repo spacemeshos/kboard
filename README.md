@@ -1,6 +1,9 @@
-# Overview
+***To get the whole team on the same page, you must first create the same page.***
+-A wise man
+
+# tl;dr
 Github released a nice Kanban board feature for tracking project status across multiple repos.
-This Javascript app renders a Kanban board for non-interactive,real-time, full-screen display on large screens.  
+This Javascript app renders a Kanban board for non-interactive, real-time, full-screen display on large screens.  
 
 ![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample1.png)
 

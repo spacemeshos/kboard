@@ -22,7 +22,6 @@ constructor(props: any) {
 
 public async componentDidMount() {
     const periodMsecs = config.updatesIntervalHours * 60 * 60 * 1000;
-
     this.interval = setInterval(() => {
       this.getBoardData();
     }, periodMsecs);

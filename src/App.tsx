@@ -4,6 +4,7 @@ import { Client } from './services/githubapiclient/client';
 import { Card } from './components/Card';
 import logo from './logo.svg';
 import { IData, IColumn, IIssue} from './services/githubapiclient/types';
+import config from './config';
 
 export interface IAppState {
     data?: IData;

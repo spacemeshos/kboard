@@ -18,18 +18,19 @@
     flex-wrap: nowrap;
     align-items: stretch;
     width: 33.333333vw;
+    overflow: hidden;
 }
 
 .col-1 {
-    background: red;
+    background: #E77474;
 }
 
 .col-2 {
-    background: blue;
+    background: #36FFFF;
 }
 
 .col-3 {
-    background: green;
+    background: #9EEA70;
 }
 
 .col-header {

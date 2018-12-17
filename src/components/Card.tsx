@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './Card.css';
 import {ILabel} from '../services/githubapiclient/types';
+import config from '../config';
 
 export interface ICardProps {
     title: string;
@@ -36,7 +37,10 @@ export class Card extends React.Component<ICardProps> {
             return null;
         }
 
-        const labels: ILabel[] = this.props.labels as ILabel[];
+        let labels: ILabel[] = this.props.labels as ILabel[];
+        if (labels.length > config.labelsCount) {
+            labels = labels.splice(0, config.labelsCound);
+        }
 
         return(
             <div className="labels-row">

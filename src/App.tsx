@@ -13,15 +13,25 @@ export interface IAppState {
 
 class App extends React.Component<object, IAppState> {
 
-constructor(props: any){
+    private interval;
+
+constructor(props: any) {
     super(props);
     this.state = { data: undefined, error: "" };
 }
 
 public async componentDidMount() {
     const periodMsecs = config.updatesIntervalHours * 60 * 60 * 1000;
-    setInterval(this.getBoardData, periodMsecs);
+
+    this.interval = setInterval(() => {
+      this.getBoardData();
+    }, periodMsecs);
+
     this.getBoardData();
+}
+
+public async componentWillUnmount() {
+    clearInterval(this.interval);
 }
 
 public render() {
@@ -58,13 +68,13 @@ public render() {
     );
   }
 
-  private async getBoardData() {
+  private async getBoardData() : Promise<void> {
       const client = new Client();
       try {
         const data: IData = await client.LoadAllData();
         console.log(data);
         this.setState({data, error: ""});
-    } catch (err) { // failed to log data
+    } catch (err) { // failed to load data
         console.log('Error loading data: ' + err);
         this.setState({data: undefined, error: "" + err});
     }

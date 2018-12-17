@@ -73,8 +73,8 @@ public render() {
             column.issues.map((issue, idx) => (
 
                 issue.Assignee != null ?
-                <Card title={issue.Title} assignee={issue.Assignee.Login} profileUrl={issue.Assignee.AvatarUrl} labels={issue.Labels} /> :
-                <Card title={issue.Title} assignee="" profileUrl="" />
+                <Card key={idx} title={issue.Title} assignee={issue.Assignee.Login} profileUrl={issue.Assignee.AvatarUrl} labels={issue.Labels} /> :
+                <Card key={idx} title={issue.Title} assignee="" profileUrl="" />
             ))
         }
         </div>);

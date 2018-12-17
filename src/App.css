@@ -22,15 +22,15 @@
 }
 
 .col-1 {
-    background: #E77474;
+    background: #FF6B60;
 }
 
 .col-2 {
-    background: #36FFFF;
+    background: #FFCF3F;
 }
 
 .col-3 {
-    background: #9EEA70;
+    background: #6AE868;
 }
 
 .col-header {
@@ -50,8 +50,7 @@
 }
 
 .col-label {
-    margin-top  f: 20px;
-    color: white;
+    color: black;
     font-size: 40px;
 }
 

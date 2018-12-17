@@ -43,6 +43,7 @@ export class Card extends React.Component<ICardProps> {
             {
                 labels.map((label, idx) => (
                     <div
+                        key={idx}
                         className="label"
                         style={{background: label.Color }}>
                         {label.Name}

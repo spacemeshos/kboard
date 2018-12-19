@@ -24,7 +24,9 @@ This Javascript app renders a Kanban board for non-interactive, real-time, full-
 - You can use express, yarn server, etc...
 
 ## Security Warning
-If you plan deploying a kboard over the Internet (and not an Intranet) then you need make sure the github api personal access token is properly configure with read access for your repos or anyone will be able to write to your github org and repos using it. Your access key needs the following permissions: `read:org, repo`
+
+If you plan deploying a kboard over the Internet (and not an Intranet) then you need make sure your github api personal access token is properly configure with read access for your repos or anyone will be able to write to your github org and repos using it. Your access key needs the following permissions: `read:org, repo`. This will be addressed once we add a node.js express server that proxies the github API as part of this project. Currently it is 100% client-side Javascript code so your access token is readable from your webapp or via sniffing the network packets sent from the web app to the github api.
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

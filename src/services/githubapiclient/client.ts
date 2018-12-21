@@ -88,6 +88,10 @@ export class Client {
         issue.Labels = new Array<Label>();
 
         for (const l of data.labels) {
+            if (l.name.toLowerCase() === 'epic') {
+                continue;
+            }
+            
             const label = new Label();
             label.Name = l.name;
             label.Color = "#" + l.color;

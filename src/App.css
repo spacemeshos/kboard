@@ -1,3 +1,7 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .main-container {
   display: flex; /* or inline-flex */
   flex-direction: row;
@@ -29,13 +33,17 @@
     flex-grow: 2;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: grid;
     flex-direction: row;
     flex-flow: wrap;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: flex-start;
+
+    grid-gap: 0px;
+    grid-template-columns: repeat(3, 220px);
 }
+
 
 .col-label {
     color: black;
@@ -64,9 +72,4 @@
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

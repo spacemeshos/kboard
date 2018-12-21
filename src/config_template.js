@@ -11,26 +11,32 @@ const config = {
     columns: [
         {
             apiUrl: '/projects/columns/3919141/cards',
-            color: '#FF6B60',
+            background: '#FF6B60',
+            color: 'black',
             issues: [],
-            name: 'Todo',
+            name: 'TODO'
         },
         {
             apiUrl: '/projects/columns/3919142/cards',
-            color: '#FFCF3F',
+            background: '#FFCF3F',
+            color: 'black',
             issues: [],
-            name: 'Doing',
+            name: 'DOING'
         },
         {
             apiUrl: '/projects/columns/3919145/cards',
-            color: '#6AE868',
+            background: '#6AE868',
+            color: 'black',
             issues: [],
-            name: 'Done',
+            name: 'DONE'
         },
     ],
     githubBaseUrl: 'https://api.github.com',
-    githubToken: 'your_github_access_token_goes_here',
-    labelsCount: 2,
+    githubToken: 'your_github_personal_access_token_goes_here',
+    issuesUpdatePeriodSecs: 60,
+    labelsCount: 3,
+    maxColumnCards: 5,
+    updatesIntervalHours: 24
 }
 
 export default config;

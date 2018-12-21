@@ -13,17 +13,17 @@ export interface IIssue {
     Labels: ILabel[];
 }
 
-export interface ILabel {
-    Name: string;
-    Color: string;
-}
-
 export interface IColumn {
     name: string;
     background: string;
     color: string;
     issues: IIssue[];
     apiUrl: string;
+}
+
+export interface ILabel {
+    Name: string;
+    Color: string;
 }
 
 export class Column implements IColumn {

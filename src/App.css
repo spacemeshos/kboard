@@ -27,6 +27,11 @@
 
 .col-header {
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch;
+    justify-content: center;
 }
 
 .col-content {
@@ -42,6 +47,12 @@
 .col-label {
     color: black;
     font-size: 40px;
+    margin-right: 20px;
+}
+
+.number-pill {
+    color: black;
+    font-size: 28px;
 }
 
 .App {

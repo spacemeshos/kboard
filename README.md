@@ -5,7 +5,7 @@
 Github released a nice Kanban board feature for tracking project status across multiple repos.
 This Javascript app renders a Kanban board for non-interactive, real-time, full-screen display on large screens.  
 
-![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample1.png)
+![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample2.png)
 
 ## Running a dev build
 1. Rename `src/config_template.js` to `src/config.js` and input a personal github access token with read perms to your org and repos.

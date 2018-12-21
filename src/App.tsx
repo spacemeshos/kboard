@@ -45,21 +45,21 @@ public render() {
 
     return (
         <div className="main-container">
-          <div className="col" style={{background: this.state.data.columns[0].color}}>
+          <div className="col" style={{background: this.state.data.columns[0].background}}>
             <div className="col-header">
-                <p className="col-label">TODO</p>
+                <p className="col-label" style={{color: this.state.data.columns[0].color}}>TODO</p>
             </div>
             { this.renderCards(this.state.data.columns[0]) }
           </div>
-          <div className="col" style={{background: this.state.data.columns[1].color}}>
+          <div className="col" style={{background: this.state.data.columns[1].background}}>
                 <div className="col-header">
-                    <p className="col-label">DOING</p>
+                    <p className="col-label" style={{color: this.state.data.columns[1].color}}>DOING</p>
               </div>
               { this.renderCards(this.state.data.columns[1]) }
           </div>
-          <div className="col" style={{background: this.state.data.columns[2].color}}>
+          <div className="col" style={{background: this.state.data.columns[2].background}}>
                 <div className="col-header">
-                    <p className="col-label">DONE</p>
+                    <p className="col-label" style={{color: this.state.data.columns[2].color}}>DONE</p>
                 </div>
                 { this.renderCards(this.state.data.columns[2]) }
           </div>
@@ -81,10 +81,17 @@ public render() {
 
   private renderCards(column: IColumn): React.ReactNode {
 
+      const n = Math.min(config.maxColumnCards, column.issues.length);
+
+      let issues = column.issues;
+      if (issues.length > config.maxColumnCards) {
+          issues = issues.splice(0, config.maxColumnCards);
+      }
+
       return (
         <div className="col-content">
         {
-            column.issues.map((issue, idx) => (
+            issues.map((issue, idx) => (
 
                 issue.Assignee != null ?
                 <Card key={idx} title={issue.Title} assignee={issue.Assignee.Login} profileUrl={issue.Assignee.AvatarUrl} labels={issue.Labels} /> :

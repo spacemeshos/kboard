@@ -33,15 +33,9 @@
     flex-grow: 2;
     margin: 0;
     padding: 0;
-    display: grid;
-    flex-direction: row;
-    flex-flow: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-content: flex-start;
-
-    grid-gap: 0px;
-    grid-template-columns: repeat(3, 220px);
 }
 
 

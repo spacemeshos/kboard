@@ -91,12 +91,19 @@ export class Client {
             if (l.name.toLowerCase() === 'epic') {
                 continue;
             }
-            
+
             const label = new Label();
             label.Name = l.name;
-            label.Color = "#" + l.color;
+            // label.Color = "#" + l.color;
+            label.Color = '#007bff';
             issue.Labels.push(label);
         }
+
+        const lbl = new Label();
+        lbl.Name = 'a label';
+        lbl.Color = '#20c997';
+        issue.Labels.push(lbl);
+
         return issue;
     }
 }

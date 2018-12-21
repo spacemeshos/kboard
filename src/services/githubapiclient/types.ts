@@ -20,6 +20,7 @@ export interface ILabel {
 
 export interface IColumn {
     name: string;
+    background: string;
     color: string;
     issues: IIssue[];
     apiUrl: string;
@@ -28,6 +29,7 @@ export interface IColumn {
 export class Column implements IColumn {
     public name: string;
     public color: string;
+    public background: string;
     public issues: IIssue[];
     public apiUrl: string;
 }

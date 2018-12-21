@@ -22,12 +22,14 @@ export class Card extends React.Component<ICardProps> {
                         {this.props.title}
                     </div>
                 </div>
-                { this.renderLabels() }
                 <div className="assignee-row">
-                    <div className="assignee-name">
-                        {this.props.assignee}
+                    { this.renderLabels() }
+                    <div className="assignee-container">
+                        <div className="assignee-name">
+                            {this.props.assignee}
+                        </div>
+                        { this.props.profileUrl !== "" ? <img className="profile-image" src={this.props.profileUrl}/> : null }
                     </div>
-                    { this.props.profileUrl !== "" ? <img className="profile-image" src={this.props.profileUrl}/> : null }
                 </div>
             </div>);
     }
@@ -43,7 +45,7 @@ export class Card extends React.Component<ICardProps> {
         }
 
         return(
-            <div className="labels-row">
+            <div className="labels-container">
             {
                 labels.map((label, idx) => (
                     <div

@@ -1,11 +1,14 @@
 ***To get the whole team on the same page, you must first create the same page.***
 -A wise man
 
+![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/kboard.gif)
+
+
 # tl;dr
 Github released a nice Kanban board feature for tracking project status across multiple repos.
 This Javascript app renders a Kanban board for non-interactive, real-time, full-screen display on large screens.  
 
-![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample2.png)
+![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample3.png)
 
 ## Running a dev build
 1. Rename `src/config_template.js` to `src/config.js` and input a personal github access token with read perms to your org and repos.
@@ -24,8 +27,45 @@ This Javascript app renders a Kanban board for non-interactive, real-time, full-
 - You can use express, yarn server, etc...
 
 ## Security Warning
-
 If you plan deploying a kboard over the Internet (and not an Intranet) then you need make sure your github api personal access token is properly configure with read access for your repos or anyone will be able to write to your github org and repos using it. Your access key needs the following permissions: `read:org, repo`. This will be addressed once we add a node.js express server that proxies the github API as part of this project. Currently it is 100% client-side Javascript code so your access token is readable from your webapp or via sniffing the network packets sent from the web app to the github api.
+
+## Configuration
+
+Configure your kboard by setting values in `src/config.js`:
+
+```language=json
+const config = {
+    columns: [
+        {
+            apiUrl: '/projects/columns/3919141/cards',
+            background: '#FF6B60',
+            color: 'black',
+            issues: [],
+            name: 'TODO'
+        },
+        {
+            apiUrl: '/projects/columns/3919142/cards',
+            background: '#FFCF3F',
+            color: 'black',
+            issues: [],
+            name: 'DOING'
+        },
+        {
+            apiUrl: '/projects/columns/3919145/cards',
+            background: '#6AE868',
+            color: 'black',
+            issues: [],
+            name: 'DONE'
+        },
+    ],
+    githubBaseUrl: 'https://api.github.com',
+    githubToken: 'your_github_personal_access_token_goes_here',
+    issuesUpdatePeriodSecs: 3,
+    labelsCount: 3,
+    maxColumnCards: 5,
+    updatesIntervalHours: 24
+}
+```
 
 ---
 

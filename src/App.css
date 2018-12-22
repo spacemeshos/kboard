@@ -51,18 +51,20 @@
 }
 
 .number-pill {
-    color: black;
-    font-size: 28px;
+    color: white;
+    font-size: 20px;
+    width: 36px;
+    line-height: 36px;
+    border-radius: 36px;
+    text-align: center;
+    border: 0px solid black;
+    background: #007bff;
 }
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
 .App-header {
   background-color: #222;

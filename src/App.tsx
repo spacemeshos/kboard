@@ -136,7 +136,7 @@ private renderColumn(i: number): React.ReactNode {
           <div className="col" style={{background: c.background}}>
             <div className="col-header">
                 <p className="col-label" style={{color: c.color}}>{c.name}</p>
-                <p className="number-pill">({c.issues.length})</p>
+                <p className="number-pill">{c.issues.length}</p>
             </div>
             { this.renderIssues(i) }
           </div>

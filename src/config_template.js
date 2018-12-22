@@ -33,7 +33,7 @@ const config = {
     ],
     githubBaseUrl: 'https://api.github.com',
     githubToken: 'your_github_personal_access_token_goes_here',
-    issuesUpdatePeriodSecs: 60,
+    issuesUpdatePeriodSecs: 3,
     labelsCount: 3,
     maxColumnCards: 5,
     updatesIntervalHours: 24

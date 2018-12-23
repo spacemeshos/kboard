@@ -103,6 +103,7 @@ private async updateVisibleIssues() : Promise<void> {
           if (take + vbs.firstIssueIdx < c.issues.length) {
               vbs.issues = c.issues.slice(vbs.firstIssueIdx, vbs.firstIssueIdx + take);
               // console.log("Taking " + take + " issues from " + vbs.firstIssueIdx);
+              
           } else {
               take = c.issues.length - vbs.firstIssueIdx;
 
@@ -110,13 +111,12 @@ private async updateVisibleIssues() : Promise<void> {
 
               if (c.issues.length >= config.maxColumnCards) {
                   const take1 = config.maxColumnCards - take;
-                  // console.log("Taking " + take1 + " issues from start...");
                   vbs.issues.push(...c.issues.slice(0, take1));
               }
           }
 
           vbs.firstIssueIdx += 1;
-          if (vbs.firstIssueIdx === c.issues.length) {
+          if (vbs.firstIssueIdx === c.issues.length || c.issues.length <= config.maxColumnCards ) {
               vbs.firstIssueIdx = 0;
           }
 

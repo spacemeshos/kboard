@@ -94,27 +94,30 @@ private async updateVisibleIssues() : Promise<void> {
               vbs.firstIssueIdx = 0;
           } else {
               vbs = this.state.visibleIssues[i];
-              vbs.firstIssueIdx += 1;
-              if (vbs.firstIssueIdx === c.issues.length) {
-                  vbs.firstIssueIdx = 0;
-              }
           }
 
           // console.log("Col: " + i + ", firstIssueIdx: " + vbs.firstIssueIdx + ", col issues: " + c.issues.length);
 
           let take = config.maxColumnCards;
-            if (take + vbs.firstIssueIdx < c.issues.length) {
+
+          if (take + vbs.firstIssueIdx < c.issues.length) {
               vbs.issues = c.issues.slice(vbs.firstIssueIdx, vbs.firstIssueIdx + take);
               // console.log("Taking " + take + " issues from " + vbs.firstIssueIdx);
           } else {
               take = c.issues.length - vbs.firstIssueIdx;
+
               vbs.issues = c.issues.slice(vbs.firstIssueIdx, vbs.firstIssueIdx + take);
 
-              if (c.issues.length > config.maxColumnCards) {
+              if (c.issues.length >= config.maxColumnCards) {
                   const take1 = config.maxColumnCards - take;
                   // console.log("Taking " + take1 + " issues from start...");
                   vbs.issues.push(...c.issues.slice(0, take1));
               }
+          }
+
+          vbs.firstIssueIdx += 1;
+          if (vbs.firstIssueIdx === c.issues.length) {
+              vbs.firstIssueIdx = 0;
           }
 
           // console.log("vbs legnth: " + vbs.issues.length);

@@ -99,11 +99,13 @@ export class Client {
             issue.Labels.push(label);
         }
 
+        /*
         const lbl = new Label();
         lbl.Name = 'a label';
         lbl.Color = '#20c997';
         issue.Labels.push(lbl);
-
+        */
+        
         return issue;
     }
 }

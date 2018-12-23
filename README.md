@@ -11,19 +11,20 @@ This Javascript app renders a Kanban board for non-interactive, real-time, full-
 ![sample](https://raw.githubusercontent.com/spacemeshos/kboard/master/design/sample3.png)
 
 ## Running a dev build
-1. Rename `src/config_template.js` to `src/config.js` and input a personal github access token with read perms to your org and repos.
+1. Rename `src/config_template.js` to `src/config.js` and input your personal github access token with read perms to your org and repos.
 
 2. Setup your board by modifying `src/config.js`
 
 3. Disable cors origin checks in your browser for localhost
 
-3. `yarn start`
+3. `yarn && yarn start`
 
 ## Building
-1. `yarn build`
+An express server is not yet included the project. You can just run a dev build via yarn, or configure a node.js server to server the package.
+1. `yarn && yarn build`
 
 ## Running a production build
-- Configure your server cors settings to allow client jscript code to call the github rest apis
+- Configure your server cors settings to allow client jscript code to call the github rest apis or alternative disable cors check in the web browser instance used to display the board
 - You can use express, yarn server, etc...
 
 ## Security Warning
